@@ -18,10 +18,11 @@ let randomIndex = Math.floor(Math.random() * 3);
 console.log(randomWords[randomIndex]);
 
 // User clicks on a letter-button, and an "I've been clicked" message appears for all buttons
-const btn = document.querySelectorAll("button");
-const aBtn = document.querySelector(".a-btn");
+const buttons = document.querySelectorAll("button");
 
-aBtn.addEventListener("click", clickMessage);
+for (let btn of buttons) {
+    btn.addEventListener("click", clickMessage);
+}
 
 function clickMessage() {
     console.log("I've been clicked!");
