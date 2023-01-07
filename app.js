@@ -17,15 +17,14 @@ const randomWords = ["hello", "bear", "mountain"];
 let randomIndex = Math.floor(Math.random() * 3);
 console.log(randomWords[randomIndex]);
 
-// User clicks on a letter-button, and an "I've been clicked" message appears for all buttons
+// User clicks on a letter-button, console indicates which letter was clicked
 const buttons = document.querySelectorAll("button");
 
 for (let btn of buttons) {
     btn.addEventListener("click", clickMessage);
 }
 
-function clickMessage() {
-    console.log("I've been clicked!");
+function clickMessage(evt) {
+    // evt.target returns the element that triggered the event
+    console.log(evt.target.innerHTML + " button was clicked!");
 }
-
-// User clicks on a letter-button, console indicates which letter was clicked
