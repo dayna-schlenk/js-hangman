@@ -28,3 +28,7 @@ function clickMessage(evt) {
     // evt.target returns the element that triggered the event
     console.log(evt.target.innerHTML + " button was clicked!");
 }
+
+// Display number of lives user has on the UI
+let userLives = 10;
+console.log("User has " + userLives + " lives.");
