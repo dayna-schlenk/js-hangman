@@ -13,5 +13,7 @@
 // Next Steps
 // ------------------------
 // Print a random word from an array to the console
+const randomWords = ["hello", "bear", "mountain"];
+
 // User clicks on a letter-button, and an "I've been clicked" message appears for all buttons
     // User clicks on a letter-button, console indicates which letter was clicked
