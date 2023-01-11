@@ -53,10 +53,6 @@ function generateWordLines() {
     console.log("Random word: " + randomWord);
 
     for (let letter of randomWord) {
-        // if (buttonLetter === letter) {
-        //     console.log("Letter match " + letter + " was found!");
-        // }
-        
         let letterSpaceP = document.createElement("p");
 
         let emptySpaceP = document.createElement("p");
@@ -73,11 +69,16 @@ function generateWordLines() {
     generateWordBtn.classList.add("hide-later");
 }
 
+// TRYING TO FIGURE THIS PART OUT (MATCHING LETTER WITH BUTTON THAT WAS CLICKED)
 function findLetterMatch(evt) {
     let buttonLetter = evt.target.innerHTML; // evt.target returns the element that triggered the event
-    console.log(buttonLetter + " button was clicked!");
+    // console.log(buttonLetter + " button was clicked!");
 
     for (let letter of randomWord) {
-        console.log("Letter: " + letter);
+        // console.log("Letter: " + letter);
+
+        if (buttonLetter === letter) {
+            console.log("Letter match " + letter + " was found!");
+        }
     }
 }
