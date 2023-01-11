@@ -16,7 +16,7 @@ const generateWordBtn = document.querySelector(".generate-word-btn");
 
 const randomWords = ["hello", "bear", "mountain"];
 let randomIndex = Math.floor(Math.random() * 3);
-let randomWord;
+let randomWord = randomWords[randomIndex];
 
 const abcButtons = document.querySelectorAll(".abc-btns");
 
@@ -39,20 +39,18 @@ livesLeftPTag.append(span);
 // ------------------------
 // Event Listeners
 // ------------------------
-generateWordBtn.addEventListener("click", generateWord);
+generateWordBtn.addEventListener("click", generateWordLines);
 
 for (let btn of abcButtons) {
-    btn.addEventListener("click", clickMessage);
+    btn.addEventListener("click", findLetterMatch);
 }
 
 
 // ------------------------
 // Functions
 // ------------------------
-function generateWord() {
-    randomWord = randomWords[randomIndex];
+function generateWordLines() {
     console.log("Random word: " + randomWord);
-    // return randomWord;
 
     for (let letter of randomWord) {
         // if (buttonLetter === letter) {
@@ -75,7 +73,11 @@ function generateWord() {
     generateWordBtn.classList.add("hide-later");
 }
 
-function clickMessage(evt) {
+function findLetterMatch(evt) {
     let buttonLetter = evt.target.innerHTML; // evt.target returns the element that triggered the event
     console.log(buttonLetter + " button was clicked!");
+
+    for (let letter of randomWord) {
+        console.log("Letter: " + letter);
+    }
 }
