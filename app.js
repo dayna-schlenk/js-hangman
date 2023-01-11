@@ -27,6 +27,9 @@ const letterSpacesDiv = document.querySelector(".letter-spaces");
 const emptySpacesDiv = document.querySelector(".empty-spaces");
 
 
+console.log("Random word: " + randomWord);
+
+
 // ------------------------
 // Show lives left on UI
 // ------------------------
@@ -48,24 +51,22 @@ for (let btn of buttons) {
 function clickMessage(evt) {
     let buttonLetter = evt.target.innerHTML; // evt.target returns the element that triggered the event
     console.log(buttonLetter + " button was clicked!");
-}
 
-console.log("Random word: " + randomWord);
+    for (let letter of randomWord) {
+        // if (buttonLetter === letter) {
+        //     console.log("Letter match " + letter + " was found!");
+        // }
+        
+        let letterSpaceP = document.createElement("p");
 
-for (let letter of randomWord) {
-    // if (buttonLetter === letter) {
-    //     console.log("Letter match " + letter + " was found!");
-    // }
-    
-    let letterSpaceP = document.createElement("p");
+        let emptySpaceP = document.createElement("p");
+        let emptySpaceContent = document.createTextNode("___");
 
-    let emptySpaceP = document.createElement("p");
-    let emptySpaceContent = document.createTextNode("___");
+        letterSpaceP.append(letter);
+        emptySpaceP.append(emptySpaceContent);
 
-    letterSpaceP.append(letter);
-    emptySpaceP.append(emptySpaceContent);
-
-    letterSpacesDiv.appendChild(letterSpaceP);
-    // emptySpacesDiv.appendChild(emptySpaceP);
-    letterSpacesDiv.appendChild(emptySpaceP);
+        letterSpacesDiv.appendChild(letterSpaceP);
+        // emptySpacesDiv.appendChild(emptySpaceP);
+        letterSpacesDiv.appendChild(emptySpaceP);
+    }
 }
