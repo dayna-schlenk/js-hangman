@@ -48,6 +48,11 @@ for (let btn of abcButtons) {
 // ------------------------
 // Functions
 // ------------------------
+function generateWord() {
+    // generate random word on button click
+    // display number of lines that match word length
+}
+
 function clickMessage(evt) {
     let buttonLetter = evt.target.innerHTML; // evt.target returns the element that triggered the event
     console.log(buttonLetter + " button was clicked!");
