@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+.hide-later {
+    display: none;
+}
+
 /* .letter-spaces, .empty-spaces {
     display: flex;
 } */
