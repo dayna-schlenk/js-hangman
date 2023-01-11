@@ -28,7 +28,8 @@ for (let btn of buttons) {
 
 function clickMessage(evt) {
     // evt.target returns the element that triggered the event
-    console.log(evt.target.innerHTML + " button was clicked!");
+    let buttonLetter = evt.target.innerHTML;
+    console.log(buttonLetter + " button was clicked!");
 }
 
 
@@ -42,7 +43,7 @@ span.append(spanContent);
 livesLeftPTag.append(span);
 
 
-// Populate empty spaces with letters from random word
+// If letter-guess is correct -> populate letter in empty space
 const letterSpacesDiv = document.querySelector(".letter-spaces");
 const emptySpacesDiv = document.querySelector(".empty-spaces");
 
