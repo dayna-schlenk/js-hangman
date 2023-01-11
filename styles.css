@@ -4,6 +4,6 @@
     box-sizing: border-box;
 }
 
-.letter-spaces {
+.letter-spaces, .empty-spaces {
     display: flex;
 }
