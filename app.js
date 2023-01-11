@@ -16,7 +16,7 @@ const randomWords = ["hello", "bear", "mountain"];
 let randomIndex = Math.floor(Math.random() * 3);
 let randomWord = randomWords[randomIndex];
 
-const buttons = document.querySelectorAll("button");
+const abcButtons = document.querySelectorAll(".abc-btns");
 
 let userLives = 10;
 const livesLeftPTag = document.querySelector(".lives-left");
@@ -40,7 +40,7 @@ livesLeftPTag.append(span);
 // ------------------------
 // Event Listeners
 // ------------------------
-for (let btn of buttons) {
+for (let btn of abcButtons) {
     btn.addEventListener("click", clickMessage);
 }
 
