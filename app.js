@@ -58,5 +58,6 @@ for (let letter of randomWord) {
     emptySpaceP.append(emptySpaceContent);
 
     letterSpacesDiv.appendChild(letterSpaceP);
-    emptySpacesDiv.appendChild(emptySpaceP);
+    // emptySpacesDiv.appendChild(emptySpaceP);
+    letterSpacesDiv.appendChild(emptySpaceP);
 }
