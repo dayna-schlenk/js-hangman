@@ -31,5 +31,7 @@ function clickMessage(evt) {
 
 // Display number of lives user has on the UI
 let userLives = 10;
+const livesLeftPTag = document.querySelector(".lives-left");
 console.log("User has " + userLives + " lives.");
 // append variable to end of <p> tag (class: lives-left)
+// add as <span> after the <p> tag?
