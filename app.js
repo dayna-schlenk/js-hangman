@@ -43,3 +43,6 @@ livesLeftPTag.append(span);
 
 
 // Generate empty spaces to match random word length
+// loop through length of random word
+    // create <p>__</p>
+    // append to div as a child element
