@@ -12,10 +12,12 @@
 // ------------------------
 // Next Steps
 // ------------------------
+
 // Print a random word from an array to the console
 const randomWords = ["hello", "bear", "mountain"];
 let randomIndex = Math.floor(Math.random() * 3);
 console.log(randomWords[randomIndex]);
+
 
 // User clicks on a letter-button, console indicates which letter was clicked
 const buttons = document.querySelectorAll("button");
@@ -29,6 +31,7 @@ function clickMessage(evt) {
     console.log(evt.target.innerHTML + " button was clicked!");
 }
 
+
 // Display number of lives user has on the UI
 let userLives = 10;
 const livesLeftPTag = document.querySelector(".lives-left");
@@ -37,3 +40,6 @@ const spanContent = document.createTextNode(userLives);
 
 span.append(spanContent);
 livesLeftPTag.append(span);
+
+
+// Generate empty spaces to match random word length
