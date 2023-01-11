@@ -32,3 +32,4 @@ function clickMessage(evt) {
 // Display number of lives user has on the UI
 let userLives = 10;
 console.log("User has " + userLives + " lives.");
+// append variable to end of <p> tag (class: lives-left)
