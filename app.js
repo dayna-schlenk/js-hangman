@@ -32,14 +32,17 @@ const emptySpacesDiv = document.querySelector(".empty-spaces");
 span.append(spanContent);
 livesLeftPTag.append(span);
 
-
 // ------------------------
-// Functionality
+// Event Listeners
 // ------------------------
 for (let btn of buttons) {
     btn.addEventListener("click", clickMessage);
 }
 
+
+// ------------------------
+// Functions
+// ------------------------
 function clickMessage(evt) {
     // evt.target returns the element that triggered the event
     let buttonLetter = evt.target.innerHTML;
