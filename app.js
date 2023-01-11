@@ -13,10 +13,11 @@
 // Next Steps
 // ------------------------
 
-// Print a random word from an array to the console
+// Capture random word from an array
 const randomWords = ["hello", "bear", "mountain"];
 let randomIndex = Math.floor(Math.random() * 3);
-console.log(randomWords[randomIndex]);
+let randomWord = randomWords[randomIndex];
+console.log(randomWord);
 
 
 // User clicks on a letter-button, console indicates which letter was clicked
