@@ -44,6 +44,7 @@ livesLeftPTag.append(span);
 
 // Populate empty spaces with letters from random word
 const letterSpacesDiv = document.querySelector(".letter-spaces");
+const emptySpacesDiv = document.querySelector(".empty-spaces");
 
 console.log("Random word: " + randomWord);
 
@@ -57,5 +58,5 @@ for (let letter of randomWord) {
     emptySpaceP.append(emptySpaceContent);
 
     letterSpacesDiv.appendChild(letterSpaceP);
-    letterSpacesDiv.appendChild(emptySpaceP);
+    emptySpacesDiv.appendChild(emptySpaceP);
 }
