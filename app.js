@@ -17,7 +17,6 @@
 const randomWords = ["hello", "bear", "mountain"];
 let randomIndex = Math.floor(Math.random() * 3);
 let randomWord = randomWords[randomIndex];
-console.log(randomWord);
 
 
 // User clicks on a letter-button, console indicates which letter was clicked
@@ -47,3 +46,6 @@ livesLeftPTag.append(span);
 // loop through length of random word
     // create <p>__</p>
     // append to div as a child element
+for (let letter of randomWord) {
+    console.log(letter);
+}
