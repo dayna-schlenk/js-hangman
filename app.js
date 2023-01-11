@@ -8,20 +8,26 @@
 // Game ends when either the user runs out of lives or the word is guessed correctly
 // Button shows up to either play again or quit
 
-
 // ------------------------
-// Next Steps
+// Variables
 // ------------------------
-
-// Capture random word from an array
 const randomWords = ["hello", "bear", "mountain"];
 let randomIndex = Math.floor(Math.random() * 3);
 let randomWord = randomWords[randomIndex];
 
-
-// User clicks on a letter-button, console indicates which letter was clicked
 const buttons = document.querySelectorAll("button");
 
+let userLives = 10;
+const livesLeftPTag = document.querySelector(".lives-left");
+const span = document.createElement("span");
+const spanContent = document.createTextNode(userLives);
+
+const letterSpacesDiv = document.querySelector(".letter-spaces");
+const emptySpacesDiv = document.querySelector(".empty-spaces");
+
+// ------------------------
+// Functionality
+// ------------------------
 for (let btn of buttons) {
     btn.addEventListener("click", clickMessage);
 }
@@ -32,24 +38,16 @@ function clickMessage(evt) {
     console.log(buttonLetter + " button was clicked!");
 }
 
-
-// Display number of lives user has on the UI
-let userLives = 10;
-const livesLeftPTag = document.querySelector(".lives-left");
-const span = document.createElement("span");
-const spanContent = document.createTextNode(userLives);
-
 span.append(spanContent);
 livesLeftPTag.append(span);
-
-
-// If letter-guess is correct -> populate letter in empty space
-const letterSpacesDiv = document.querySelector(".letter-spaces");
-const emptySpacesDiv = document.querySelector(".empty-spaces");
 
 console.log("Random word: " + randomWord);
 
 for (let letter of randomWord) {
+    // if (buttonLetter === letter) {
+    //     console.log("Letter match " + letter + " was found!");
+    // }
+    
     let letterSpaceP = document.createElement("p");
 
     let emptySpaceP = document.createElement("p");
