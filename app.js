@@ -8,6 +8,7 @@
 // Game ends when either the user runs out of lives or the word is guessed correctly
 // Button shows up to either play again or quit
 
+
 // ------------------------
 // Variables
 // ------------------------
@@ -32,6 +33,7 @@ const emptySpacesDiv = document.querySelector(".empty-spaces");
 span.append(spanContent);
 livesLeftPTag.append(span);
 
+
 // ------------------------
 // Event Listeners
 // ------------------------
@@ -44,8 +46,7 @@ for (let btn of buttons) {
 // Functions
 // ------------------------
 function clickMessage(evt) {
-    // evt.target returns the element that triggered the event
-    let buttonLetter = evt.target.innerHTML;
+    let buttonLetter = evt.target.innerHTML; // evt.target returns the element that triggered the event
     console.log(buttonLetter + " button was clicked!");
 }
 
