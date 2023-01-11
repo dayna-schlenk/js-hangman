@@ -25,6 +25,14 @@ const spanContent = document.createTextNode(userLives);
 const letterSpacesDiv = document.querySelector(".letter-spaces");
 const emptySpacesDiv = document.querySelector(".empty-spaces");
 
+
+// ------------------------
+// Show lives left on UI
+// ------------------------
+span.append(spanContent);
+livesLeftPTag.append(span);
+
+
 // ------------------------
 // Functionality
 // ------------------------
@@ -37,9 +45,6 @@ function clickMessage(evt) {
     let buttonLetter = evt.target.innerHTML;
     console.log(buttonLetter + " button was clicked!");
 }
-
-span.append(spanContent);
-livesLeftPTag.append(span);
 
 console.log("Random word: " + randomWord);
 
