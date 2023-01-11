@@ -12,9 +12,11 @@
 // ------------------------
 // Variables
 // ------------------------
+const generateWordBtn = document.querySelector(".generate-word-btn");
+
 const randomWords = ["hello", "bear", "mountain"];
 let randomIndex = Math.floor(Math.random() * 3);
-let randomWord = randomWords[randomIndex];
+let randomWord;
 
 const abcButtons = document.querySelectorAll(".abc-btns");
 
@@ -27,9 +29,6 @@ const letterSpacesDiv = document.querySelector(".letter-spaces");
 const emptySpacesDiv = document.querySelector(".empty-spaces");
 
 
-console.log("Random word: " + randomWord);
-
-
 // ------------------------
 // Show lives left on UI
 // ------------------------
@@ -40,6 +39,8 @@ livesLeftPTag.append(span);
 // ------------------------
 // Event Listeners
 // ------------------------
+generateWordBtn.addEventListener("click", generateWord);
+
 for (let btn of abcButtons) {
     btn.addEventListener("click", clickMessage);
 }
@@ -49,13 +50,9 @@ for (let btn of abcButtons) {
 // Functions
 // ------------------------
 function generateWord() {
-    // generate random word on button click
-    // display number of lines that match word length
-}
-
-function clickMessage(evt) {
-    let buttonLetter = evt.target.innerHTML; // evt.target returns the element that triggered the event
-    console.log(buttonLetter + " button was clicked!");
+    randomWord = randomWords[randomIndex];
+    console.log("Random word: " + randomWord);
+    // return randomWord;
 
     for (let letter of randomWord) {
         // if (buttonLetter === letter) {
@@ -74,4 +71,9 @@ function clickMessage(evt) {
         // emptySpacesDiv.appendChild(emptySpaceP);
         letterSpacesDiv.appendChild(emptySpaceP);
     }
+}
+
+function clickMessage(evt) {
+    let buttonLetter = evt.target.innerHTML; // evt.target returns the element that triggered the event
+    console.log(buttonLetter + " button was clicked!");
 }
