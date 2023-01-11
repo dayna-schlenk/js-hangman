@@ -43,9 +43,14 @@ livesLeftPTag.append(span);
 
 
 // Generate empty spaces to match random word length
-// loop through length of random word
-    // create <p>__</p>
-    // append to div as a child element
+const letterSpacesDiv = document.querySelector(".letter-spaces");
+
+console.log("Random word: " + randomWord);
+
 for (let letter of randomWord) {
-    console.log(letter);
+    let emptySpaceP = document.createElement("p");
+    let emptySpaceContent = document.createTextNode("___");
+
+    emptySpaceP.append(emptySpaceContent);
+    letterSpacesDiv.appendChild(emptySpaceP);
 }
