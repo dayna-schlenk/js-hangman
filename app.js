@@ -71,6 +71,8 @@ function generateWord() {
         // emptySpacesDiv.appendChild(emptySpaceP);
         letterSpacesDiv.appendChild(emptySpaceP);
     }
+
+    generateWordBtn.classList.add("hide-later");
 }
 
 function clickMessage(evt) {
