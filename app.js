@@ -63,8 +63,8 @@ function generateWordLines() {
 
         letterSpacesDiv.appendChild(letterSpaceP);
         letterSpacesDiv.classList.add("hide");
-        // emptySpacesDiv.appendChild(emptySpaceP);
-        letterSpacesDiv.appendChild(emptySpaceP);
+
+        emptySpacesDiv.appendChild(emptySpaceP);
     }
 
     generateWordBtn.classList.add("hide");
