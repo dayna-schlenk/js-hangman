@@ -66,7 +66,7 @@ function generateWordLines() {
         letterSpacesDiv.appendChild(emptySpaceP);
     }
 
-    generateWordBtn.classList.add("hide-later");
+    generateWordBtn.classList.add("hide");
 }
 
 // Match button-click with letter of random word
