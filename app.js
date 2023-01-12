@@ -62,6 +62,7 @@ function generateWordLines() {
         emptySpaceP.append(emptySpaceContent);
 
         letterSpacesDiv.appendChild(letterSpaceP);
+        letterSpacesDiv.classList.add("hide");
         // emptySpacesDiv.appendChild(emptySpaceP);
         letterSpacesDiv.appendChild(emptySpaceP);
     }
@@ -69,7 +70,7 @@ function generateWordLines() {
     generateWordBtn.classList.add("hide");
 }
 
-// Match button-click with letter of random word
+// If letter matches in randomWord -> make letter visible in empty space
 function findLetterMatch(evt) {
     let buttonLetter = evt.target.innerHTML; // evt.target returns the element that triggered the event
     console.log(buttonLetter + " button was clicked!");
