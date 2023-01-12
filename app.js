@@ -69,14 +69,12 @@ function generateWordLines() {
     generateWordBtn.classList.add("hide-later");
 }
 
-// TRYING TO FIGURE THIS PART OUT (MATCHING LETTER WITH BUTTON THAT WAS CLICKED)
+// Match button-click with letter of random word
 function findLetterMatch(evt) {
     let buttonLetter = evt.target.innerHTML; // evt.target returns the element that triggered the event
-    // console.log(buttonLetter + " button was clicked!");
+    console.log(buttonLetter + " button was clicked!");
 
     for (let letter of randomWord) {
-        // console.log("Letter: " + letter);
-
         if (buttonLetter === letter) {
             console.log("Letter match " + letter + " was found!");
         }
