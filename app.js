@@ -28,6 +28,8 @@ const spanContent = document.createTextNode(userLives);
 const letterSpacesDiv = document.querySelector(".letter-spaces");
 const emptySpacesDiv = document.querySelector(".empty-spaces");
 
+let letterSpaceP = document.createElement("p");
+
 
 // ------------------------
 // Show lives left on UI
@@ -53,7 +55,7 @@ function generateWordLines() {
     console.log("Random word: " + randomWord);
 
     for (let letter of randomWord) {
-        let letterSpaceP = document.createElement("p");
+        // let letterSpaceP = document.createElement("p");
 
         let emptySpaceP = document.createElement("p");
         let emptySpaceContent = document.createTextNode("___");
@@ -64,7 +66,6 @@ function generateWordLines() {
         emptySpaceP.append(emptySpaceContent);
 
         letterSpacesDiv.appendChild(letterSpaceP);
-        // letterSpacesDiv.classList.add("hide");
 
         emptySpacesDiv.appendChild(emptySpaceP);
     }
@@ -80,7 +81,10 @@ function findLetterMatch(evt) {
     for (let letter of randomWord) {
         if (buttonLetter === letter) {
             console.log("Letter match " + letter + " was found!");
-            // letterSpacesDiv.classList.remove("hide");
+            letterSpaceP.classList.remove("hide");
+
+            // match that letter with what shows in empty space
+            // only make visible the <p> tag whose innerHTML matches that letter
         }
     }
 }
