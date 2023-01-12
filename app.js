@@ -78,6 +78,7 @@ function findLetterMatch(evt) {
     for (let letter of randomWord) {
         if (buttonLetter === letter) {
             console.log("Letter match " + letter + " was found!");
+            letterSpacesDiv.classList.remove("hide");
         }
     }
 }
