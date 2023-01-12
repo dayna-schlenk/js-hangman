@@ -59,10 +59,12 @@ function generateWordLines() {
         let emptySpaceContent = document.createTextNode("___");
 
         letterSpaceP.append(letter);
+        letterSpaceP.classList.add("hide");
+
         emptySpaceP.append(emptySpaceContent);
 
         letterSpacesDiv.appendChild(letterSpaceP);
-        letterSpacesDiv.classList.add("hide");
+        // letterSpacesDiv.classList.add("hide");
 
         emptySpacesDiv.appendChild(emptySpaceP);
     }
@@ -78,7 +80,7 @@ function findLetterMatch(evt) {
     for (let letter of randomWord) {
         if (buttonLetter === letter) {
             console.log("Letter match " + letter + " was found!");
-            letterSpacesDiv.classList.remove("hide");
+            // letterSpacesDiv.classList.remove("hide");
         }
     }
 }
