@@ -27,6 +27,7 @@ const spanContent = document.createTextNode(userLives);
 
 const letterSpacesDiv = document.querySelector(".letter-spaces");
 const emptySpacesDiv = document.querySelector(".empty-spaces");
+const wordStage = document.querySelector(".word-stage");
 
 let letterSpaceP = document.createElement("p");
 
@@ -41,7 +42,7 @@ livesLeftPTag.append(span);
 // ------------------------
 // Event Listeners
 // ------------------------
-generateWordBtn.addEventListener("click", generateWordLines);
+generateWordBtn.addEventListener("click", generateLetterLines);
 
 for (let btn of abcButtons) {
     btn.addEventListener("click", findLetterMatch);
@@ -71,6 +72,16 @@ function generateWordLines() {
     }
 
     generateWordBtn.classList.add("hide");
+}
+
+function generateLetterLines() {
+    console.log(`Random word = ${randomWord}`);
+
+    for (let letter of randomWord) {
+        let underline = document.createElement("p");
+        underline.innerText = "_____";
+        wordStage.appendChild(underline);
+    }
 }
 
 // If letter matches in randomWord -> make letter visible in empty space
