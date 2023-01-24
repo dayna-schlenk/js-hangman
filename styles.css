@@ -8,6 +8,12 @@
     display: none;
 }
 
-/* .letter-spaces, .empty-spaces {
+.word-stage {
     display: flex;
-} */
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.word-stage > * {
+    margin-right: 1rem;
+}
