@@ -20,17 +20,12 @@ let randomWord = randomWords[randomIndex];
 
 const abcButtons = document.querySelectorAll(".abc-btns");
 
+const wordStage = document.querySelector(".word-stage");
+
 let userLives = 10;
 const livesLeftPTag = document.querySelector(".lives-left");
 const span = document.createElement("span");
 const spanContent = document.createTextNode(userLives);
-
-const letterSpacesDiv = document.querySelector(".letter-spaces");
-const emptySpacesDiv = document.querySelector(".empty-spaces");
-const wordStage = document.querySelector(".word-stage");
-
-let letterSpaceP = document.createElement("p");
-
 
 // ------------------------
 // Show lives left on UI
@@ -52,28 +47,6 @@ for (let btn of abcButtons) {
 // ------------------------
 // Functions
 // ------------------------
-function generateWordLines() {
-    console.log("Random word: " + randomWord);
-
-    for (let letter of randomWord) {
-        // let letterSpaceP = document.createElement("p");
-
-        let emptySpaceP = document.createElement("p");
-        let emptySpaceContent = document.createTextNode("___");
-
-        letterSpaceP.append(letter);
-        letterSpaceP.classList.add("hide");
-
-        emptySpaceP.append(emptySpaceContent);
-
-        letterSpacesDiv.appendChild(letterSpaceP);
-
-        emptySpacesDiv.appendChild(emptySpaceP);
-    }
-
-    generateWordBtn.classList.add("hide");
-}
-
 function generateLetterLines() {
     console.log(`Random word = ${randomWord}`);
 
@@ -85,17 +58,14 @@ function generateLetterLines() {
 }
 
 // If letter matches in randomWord -> make letter visible in empty space
-function findLetterMatch(evt) {
-    let buttonLetter = evt.target.innerHTML; // evt.target returns the element that triggered the event
-    console.log(buttonLetter + " button was clicked!");
+// function findLetterMatch(evt) {
+//     let buttonLetter = evt.target.innerHTML;
+//     console.log(buttonLetter + " button was clicked!");
 
-    for (let letter of randomWord) {
-        if (buttonLetter === letter) {
-            console.log("Letter match " + letter + " was found!");
-            letterSpaceP.classList.remove("hide");
-
-            // match that letter with what shows in empty space
-            // only make visible the <p> tag whose innerHTML matches that letter
-        }
-    }
-}
+//     for (let letter of randomWord) {
+//         if (buttonLetter === letter) {
+//             console.log("Letter match " + letter + " was found!");
+//             letterSpaceP.classList.remove("hide");
+//         }
+//     }
+// }
