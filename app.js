@@ -58,14 +58,12 @@ function generateLetterLines() {
 }
 
 // If letter matches in randomWord -> make letter visible in empty space
-// function findLetterMatch(evt) {
-//     let buttonLetter = evt.target.innerHTML;
-//     console.log(buttonLetter + " button was clicked!");
+function findLetterMatch(evt) {
+    let buttonLetter = evt.target.innerHTML;
 
-//     for (let letter of randomWord) {
-//         if (buttonLetter === letter) {
-//             console.log("Letter match " + letter + " was found!");
-//             letterSpaceP.classList.remove("hide");
-//         }
-//     }
-// }
+    for (let letter of randomWord) {
+        if (buttonLetter === letter) {
+            console.log("Letter match " + buttonLetter + " was found!");
+        }
+    }
+}
