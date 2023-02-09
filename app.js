@@ -57,7 +57,6 @@ function generateLetterLines() {
     }
 }
 
-// If letter matches in randomWord -> make letter visible in empty space
 function findLetterMatch(evt) {
     let buttonLetter = evt.target.innerHTML;
 
