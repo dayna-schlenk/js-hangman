@@ -1,13 +1,20 @@
 // ------------------------
 // MVP Requirements
 // ------------------------
-// User starts with 10 lives
-// Generate random word (start with an array of basic words)
-// Empty spaces to populate letters in random mystery word
-// ABC letter buttons for user to select (which will then either populate the correct letter in the proper place, or take away 1 life from the user if incorrect)
-// Game ends when either the user runs out of lives or the word is guessed correctly
-// Button shows up to either play again or quit
+// Pick a random word
+// Take the player's guess
+// Check if the player's guess is a valid letter
+// Keep track of the letters the player has guessed
+// Show the player their progress
+// Finish when the player has guessed the word
 
+// ------------------------
+// Post-MVP Requirements
+// ------------------------
+// Quit the game if the player wants to
+// Player loses a life when their guess is incorrect
+// If player runs out of lives, the game ends
+// Play again if the player wants to (reset the game)
 
 // ------------------------
 // Variables
