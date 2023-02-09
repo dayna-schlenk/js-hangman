@@ -22,7 +22,7 @@
 const generateWordBtn = document.querySelector(".generate-word-btn");
 
 const randomWords = ["hello", "bear", "mountain"];
-let randomIndex = Math.floor(Math.random() * 3);
+let randomIndex = Math.floor(Math.random() * randomWords.length);
 let randomWord = randomWords[randomIndex];
 
 const abcButtons = document.querySelectorAll(".abc-btns");
