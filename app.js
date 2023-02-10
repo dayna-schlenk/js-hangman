@@ -19,12 +19,10 @@
 // ------------------------
 // Variables
 // ------------------------
-const generateWordBtn = document.querySelector(".generate-word-btn");
-
-// Generate random word on page load (remove generateWordBtn above)
 const randomWordsCollection = ["hello", "bear", "mountain"];
 let randomIndex = Math.floor(Math.random() * randomWordsCollection.length);
 let randomWord = randomWordsCollection[randomIndex];
+console.log(`Random word: ${randomWord}`);
 
 let remainingLetters = randomWord.length;
 console.log(`Remaining letters: ${remainingLetters}`);
@@ -44,26 +42,13 @@ wordStageDiv.append(uiWord);
 // ------------------------
 // Event Listeners
 // ------------------------
-generateWordBtn.addEventListener("click", generateLetterLines);
-
 for (let btn of abcButtons) {
     btn.addEventListener("click", findLetterMatch);
 }
 
-
 // ------------------------
 // Functions
 // ------------------------
-function generateLetterLines() {
-    console.log(`Random word = ${randomWord}`);
-
-    for (let letter of randomWord) {
-        let underline = document.createElement("p");
-        underline.innerText = "_____";
-        wordStage.appendChild(underline);
-    }
-}
-
 function findLetterMatch(evt) {
     let buttonLetter = evt.target.innerHTML;
 
