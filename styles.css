@@ -3,17 +3,3 @@
     padding: 0;
     box-sizing: border-box;
 }
-
-.hide {
-    display: none;
-}
-
-.word-stage {
-    display: flex;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-}
-
-.word-stage > * {
-    margin-right: 1rem;
-}
