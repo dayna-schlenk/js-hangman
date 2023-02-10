@@ -30,7 +30,7 @@ let remainingLetters = randomWord.length;
 console.log(`Remaining letters: ${remainingLetters}`);
 
 const abcButtons = document.querySelectorAll(".abc-btns");
-// const wordStage = document.querySelector(".word-stage");
+const wordStageDiv = document.querySelector(".word-stage-div");
 
 let wordStage = [];
 
@@ -39,6 +39,7 @@ for (let letter of randomWord) {
 }
 
 let uiWord = wordStage.join(" ");
+wordStageDiv.append(uiWord);
 
 // ------------------------
 // Event Listeners
