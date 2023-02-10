@@ -30,18 +30,8 @@ let remainingLetters = randomWord.length;
 console.log(`Remaining letters: ${remainingLetters}`);
 
 const abcButtons = document.querySelectorAll(".abc-btns");
-const wordStage = document.querySelector(".word-stage");
+// const wordStage = document.querySelector(".word-stage");
 
-// let userLives = 10;
-// const livesLeftPTag = document.querySelector(".lives-left");
-// const span = document.createElement("span");
-// const spanContent = document.createTextNode(userLives);
-
-// ------------------------
-// Show lives left on UI
-// ------------------------
-// span.append(spanContent);
-// livesLeftPTag.append(span);
 
 
 // ------------------------
