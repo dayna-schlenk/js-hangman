@@ -16,9 +16,9 @@
 // If player runs out of lives, the game ends
 // Play again if the player wants to (reset the game)
 
-// ------------------------
-// Variables
-// ------------------------
+// --------------------------
+// Variables & On-Load Logic
+// --------------------------
 const randomWordsCollection = ["hello", "bear", "mountain"];
 let randomIndex = Math.floor(Math.random() * randomWordsCollection.length);
 let randomWord = randomWordsCollection[randomIndex];
