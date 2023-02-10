@@ -3,3 +3,16 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+.word-stage-div {
+    margin: 1rem 0;
+}
+
+.word-stage-p {
+    font-size: 6rem;
+}
+
+.abc-btns {
+    margin-right: 0.5rem;
+    padding: 0.5rem;
+}
