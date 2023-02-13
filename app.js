@@ -50,11 +50,11 @@ for (let btn of abcButtons) {
 // Functions
 // ------------------------
 function findLetterMatch(evt) {
-    let buttonLetter = evt.target.innerHTML;
+    let buttonGuess = evt.target.innerHTML;
 
     for (let letter of randomWord) {
-        if (buttonLetter === letter) {
-            console.log("Letter match " + buttonLetter + " was found!");
+        if (buttonGuess === letter) {
+            console.log("Letter match " + buttonGuess + " was found!");
         }
     }
 }
