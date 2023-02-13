@@ -52,9 +52,13 @@ for (let btn of abcButtons) {
 function findLetterMatch(evt) {
     let buttonGuess = evt.target.innerHTML;
 
-    for (let letter of randomWord) {
-        if (buttonGuess === letter) {
-            console.log("Letter match " + buttonGuess + " was found!");
-        }
-    }
+    // while (remainingLetters > 0) {
+    //     for (let letter of randomWord) {
+    //         if (buttonGuess !== letter) {
+    //             alert(`${buttonGuess} is incorrect. Try again.`);
+    //         } else {
+    //             alert(`Letter match ${buttonGuess} was found!`);
+    //         }
+    //     }
+    // }
 }
