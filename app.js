@@ -25,7 +25,6 @@ let randomWord = randomWordsCollection[randomIndex];
 console.log(`Random word: ${randomWord}`);
 
 let remainingLetters = randomWord.length;
-console.log(`Remaining letters: ${remainingLetters}`);
 
 const abcButtons = document.querySelectorAll(".abc-btns");
 const wordStageP = document.querySelector(".word-stage-p");
@@ -52,27 +51,21 @@ for (let btn of abcButtons) {
 function findLetterMatch(evt) {
     let buttonGuess = evt.target.innerHTML;
 
-    // while (remainingLetters > 0) {
-    //     for (let letter of randomWord) {
-    //         if (buttonGuess !== letter) {
-    //             alert(`${buttonGuess} is incorrect. Try again.`);
-    //         } else {
-    //             alert(`Letter match ${buttonGuess} was found!`);
-    //         }
-    //     }
-    // }
+    while (remainingLetters > 0) {
+        if (!randomWord.match(buttonGuess)) {
+            console.log(`${buttonGuess} is incorrect.`);
+        } else {
+            console.log(`${buttonGuess} is correct!`);
 
-    if (!randomWord.match(buttonGuess)) {
-        console.log(`${buttonGuess} is incorrect.`);
-    } else {
-        console.log(`${buttonGuess} is correct!`);
-
-        for (let i = 0; i < randomWord.length; i++) {
-            if (randomWord[i] === buttonGuess) {
-                wordStage[i] = buttonGuess;
+            for (let i = 0; i < randomWord.length; i++) {
+                if (randomWord[i] === buttonGuess) {
+                    wordStage[i] = buttonGuess;
+                    remainingLetters--;
+                }
             }
         }
-    }
 
-    console.log(`New word stage: ${wordStage}`);
+        console.log(`Remaining letters: ${remainingLetters}`);
+        console.log(`New word stage: ${wordStage}`);   
+    }
 }
