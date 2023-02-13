@@ -61,6 +61,8 @@ function findLetterMatch(evt) {
                 if (randomWord[i] === buttonGuess) {
                     wordStage[i] = buttonGuess;
                     remainingLetters--;
+                    uiWord = wordStage.join(" ");
+                    console.log(`UI word: ${uiWord}`);
                 }
             }
         }  
