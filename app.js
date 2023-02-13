@@ -61,4 +61,20 @@ function findLetterMatch(evt) {
     //         }
     //     }
     // }
+
+    // for (let letter of randomWord) {
+    //     if (buttonGuess !== letter) {
+    //         alert(`${buttonGuess} is incorrect. Try again.`);
+    //         break;
+    //     } else {
+    //         alert(`Letter match ${buttonGuess} was found!`);
+    //         break;
+    //     }
+    // }
+
+    if (randomWord.match(buttonGuess)) {
+        console.log(`${buttonGuess} is correct!`);
+    } else {
+        console.log(`${buttonGuess} is incorrect.`);
+    }
 }
