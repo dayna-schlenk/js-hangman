@@ -51,7 +51,7 @@ for (let btn of abcButtons) {
 function findLetterMatch(evt) {
     let buttonGuess = evt.target.innerHTML;
 
-    while (remainingLetters > 0) {
+    if (remainingLetters > 0) {
         if (!randomWord.match(buttonGuess)) {
             console.log(`${buttonGuess} is incorrect.`);
         } else {
@@ -63,9 +63,11 @@ function findLetterMatch(evt) {
                     remainingLetters--;
                 }
             }
-        }
-
-        console.log(`Remaining letters: ${remainingLetters}`);
-        console.log(`New word stage: ${wordStage}`);   
+        }  
+    } else {
+        console.log("You have no more letters!");
     }
+
+    console.log(`Remaining letters: ${remainingLetters}`);
+    console.log(`New word stage: ${wordStage}`);
 }
