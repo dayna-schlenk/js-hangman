@@ -63,6 +63,9 @@ function findLetterMatch(evt) {
                     remainingLetters--;
                     uiWord = wordStage.join(" ");
                     console.log(`UI word: ${uiWord}`);
+                    // update element
+                    // remove old element
+                    // add updated element back to UI
                 }
             }
         }  
