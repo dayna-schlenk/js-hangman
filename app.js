@@ -1,3 +1,11 @@
+// ------------------------
+// "Get" Elements
+// ------------------------
+const abcButtons = document.querySelectorAll(".abc-btns");
+const wordStageP = document.querySelector(".word-stage-p");
+// change to wordStage?
+const wordStageDiv = document.querySelector(".word-stage-div");
+
 // --------------------------
 // Variables & On-Load Logic
 // --------------------------
@@ -8,11 +16,10 @@ console.log(`Random word: ${randomWord}`);
 
 let remainingLetters = randomWord.length;
 
-const abcButtons = document.querySelectorAll(".abc-btns");
-const wordStageP = document.querySelector(".word-stage-p");
-
+// change to wordDisplay?
 let wordStage = [];
 
+// put this in a function & call it?
 for (let letter of randomWord) {
     wordStage.push("_");
 }
