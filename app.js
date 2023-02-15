@@ -1,21 +1,3 @@
-// ------------------------
-// MVP Requirements
-// ------------------------
-// Pick a random word
-// Take the player's guess
-// Check if the player's guess is a valid letter
-// Keep track of the letters the player has guessed
-// Show the player their progress
-// Finish when the player has guessed the word
-
-// ------------------------
-// Post-MVP Requirements
-// ------------------------
-// Quit the game if the player wants to
-// Player loses a life when their guess is incorrect
-// If player runs out of lives, the game ends
-// Play again if the player wants to (reset the game)
-
 // --------------------------
 // Variables & On-Load Logic
 // --------------------------
@@ -61,9 +43,9 @@ function findLetterMatch(evt) {
                 if (randomWord[i] === buttonGuess) {
                     wordStage[i] = buttonGuess;
                     remainingLetters--;
+                    // update element
                     uiWord = wordStage.join(" ");
                     console.log(`UI word: ${uiWord}`);
-                    // update element
                     // remove old element
                     // add updated element back to UI
                 }
@@ -72,7 +54,4 @@ function findLetterMatch(evt) {
     } else {
         console.log("You have no more letters!");
     }
-
-    console.log(`Remaining letters: ${remainingLetters}`);
-    console.log(`New word stage: ${wordStage}`);
 }
