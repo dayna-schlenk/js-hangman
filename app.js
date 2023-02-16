@@ -2,9 +2,7 @@
 // "Get" Elements
 // ------------------------
 const abcButtons = document.querySelectorAll(".abc-btns");
-const wordStageP = document.querySelector(".word-stage-p");
-// change to wordStage?
-const wordStageDiv = document.querySelector(".word-stage-div");
+const wordStage = document.querySelector(".word-stage");
 
 // --------------------------
 // Variables & On-Load Logic
@@ -14,18 +12,20 @@ let randomIndex = Math.floor(Math.random() * randomWordsCollection.length);
 let randomWord = randomWordsCollection[randomIndex];
 console.log(`Random word: ${randomWord}`);
 
+// is this needed?
 let remainingLetters = randomWord.length;
 
-// change to wordDisplay?
-let wordStage = [];
+let wordDisplay = [];
 
 // put this in a function & call it?
 for (let letter of randomWord) {
-    wordStage.push("_");
+    wordDisplay.push("_");
 }
 
-let uiWord = wordStage.join(" ");
-wordStageP.append(uiWord);
+let wordAsString = document.createTextNode(wordDisplay.join(" "));
+const paragraphElement = document.createElement("p");
+paragraphElement.appendChild(wordAsString);
+wordStage.appendChild(paragraphElement);
 
 // ------------------------
 // Event Listeners
@@ -48,11 +48,11 @@ function findLetterMatch(evt) {
 
             for (let i = 0; i < randomWord.length; i++) {
                 if (randomWord[i] === buttonGuess) {
-                    wordStage[i] = buttonGuess;
+                    wordDisplay[i] = buttonGuess;
                     remainingLetters--;
                     // update element
-                    uiWord = wordStage.join(" ");
-                    console.log(`UI word: ${uiWord}`);
+                    wordAsString = wordDisplay.join(" ");
+                    console.log(`Word as String: ${wordAsString}`);
                     // remove old element
                     // add updated element back to UI
                 }
