@@ -1,32 +1,29 @@
 // ------------------------
-// "Get" Elements
+// Variables
 // ------------------------
 const abcButtons = document.querySelectorAll(".abc-btns");
 const wordStage = document.querySelector(".word-stage");
 
-// --------------------------
-// Variables & On-Load Logic
-// --------------------------
 const randomWordsCollection = ["hello", "bear", "mountain"];
 let randomIndex = Math.floor(Math.random() * randomWordsCollection.length);
 let randomWord = randomWordsCollection[randomIndex];
+// remove eventually
 console.log(`Random word: ${randomWord}`);
 
-// is this needed?
 let remainingLetters = randomWord.length;
-
 let wordDisplay = [];
-
-// put this in a function & call it?
-for (let letter of randomWord) {
-    wordDisplay.push("_");
-}
 
 let wordAsString = document.createTextNode(wordDisplay.join(" "));
 const paragraphElement = document.createElement("p");
+
+// ------------------------
+// Put together wordStage
+// ------------------------
 paragraphElement.appendChild(wordAsString);
 paragraphElement.classList.add("paragraph-element");
 wordStage.appendChild(paragraphElement);
+
+createWordStage();
 
 // ------------------------
 // Event Listeners
@@ -38,6 +35,12 @@ for (let btn of abcButtons) {
 // ------------------------
 // Functions
 // ------------------------
+function createWordStage() {
+    for (let letter of randomWord) {
+        wordDisplay.push("_");
+    }   
+}
+
 function findLetterMatch(evt) {
     let buttonGuess = evt.target.innerHTML;
 
