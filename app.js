@@ -50,11 +50,8 @@ function findLetterMatch(evt) {
                 if (randomWord[i] === buttonGuess) {
                     wordDisplay[i] = buttonGuess;
                     remainingLetters--;
-                    // update element
-                    wordAsString = wordDisplay.join(" ");
+                    wordAsString.nodeValue = wordDisplay.join(" ");
                     console.log(`Word as String: ${wordAsString}`);
-                    // remove old element
-                    // add updated element back to UI
                 }
             }
         }  
