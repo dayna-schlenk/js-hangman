@@ -13,17 +13,20 @@ console.log(`Random word: ${randomWord}`);
 let remainingLetters = randomWord.length;
 let wordDisplay = [];
 
+// ------------------------
+// Set Up Word Stage
+// ------------------------
+createWordStage();
+
+// ------------------------
+// Set Up String for UI
+// ------------------------
 let wordAsString = document.createTextNode(wordDisplay.join(" "));
 const paragraphElement = document.createElement("p");
 
-// ------------------------
-// Put together wordStage
-// ------------------------
 paragraphElement.appendChild(wordAsString);
 paragraphElement.classList.add("paragraph-element");
 wordStage.appendChild(paragraphElement);
-
-createWordStage();
 
 // ------------------------
 // Event Listeners
@@ -38,7 +41,7 @@ for (let btn of abcButtons) {
 function createWordStage() {
     for (let letter of randomWord) {
         wordDisplay.push("_");
-    }   
+    }
 }
 
 function findLetterMatch(evt) {
