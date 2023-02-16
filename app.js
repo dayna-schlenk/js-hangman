@@ -25,6 +25,7 @@ for (let letter of randomWord) {
 let wordAsString = document.createTextNode(wordDisplay.join(" "));
 const paragraphElement = document.createElement("p");
 paragraphElement.appendChild(wordAsString);
+paragraphElement.classList.add("paragraph-element");
 wordStage.appendChild(paragraphElement);
 
 // ------------------------
@@ -44,14 +45,11 @@ function findLetterMatch(evt) {
         if (!randomWord.match(buttonGuess)) {
             console.log(`${buttonGuess} is incorrect.`);
         } else {
-            console.log(`${buttonGuess} is correct!`);
-
             for (let i = 0; i < randomWord.length; i++) {
                 if (randomWord[i] === buttonGuess) {
                     wordDisplay[i] = buttonGuess;
                     remainingLetters--;
                     wordAsString.nodeValue = wordDisplay.join(" ");
-                    console.log(`Word as String: ${wordAsString}`);
                 }
             }
         }  

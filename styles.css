@@ -4,12 +4,12 @@
     box-sizing: border-box;
 }
 
-.word-stage-div {
+.word-stage {
     margin: 1rem 0;
 }
 
-.word-stage-p {
-    font-size: 6rem;
+.paragraph-element {
+    font-size: 4rem;
 }
 
 .abc-btns {
