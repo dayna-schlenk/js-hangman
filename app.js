@@ -33,11 +33,6 @@ paragraphElement.classList.add("paragraph-element");
 wordStage.appendChild(paragraphElement);
 
 // ------------------------
-// Display Lives Left
-// ------------------------
-livesLeftH2.append(livesLeft);
-
-// ------------------------
 // Create ABC Buttons
 // ------------------------
 createAbcButtons();
@@ -49,6 +44,11 @@ const abcButtons = document.querySelectorAll(".abc-btns");
 for (let btn of abcButtons) {
     btn.addEventListener("click", findLetterMatch);
 }
+
+// ------------------------
+// Display Lives Left
+// ------------------------
+livesLeftH2.append(livesLeft);
 
 // ------------------------
 // Functions
@@ -78,15 +78,17 @@ function findLetterMatch(evt) {
             for (let i = 0; i < randomWord.length; i++) {
                 if (randomWord[i] === buttonGuess) {
                     wordDisplay[i] = buttonGuess;
-                    // replace with # of lives
                     // remainingLetters--;
                     wordAsString.nodeValue = wordDisplay.join(" ");
                 }
             }
         }
+
+        livesLeft--;
+        console.log(`You have ${livesLeft} lives left.`);
         
     } else {
-        console.log("You have no more letters!");
+        console.log("You have no more lives!");
     }
 
     evt.target.setAttribute("disabled", true);
