@@ -3,6 +3,7 @@
 // ------------------------
 const wordStage = document.querySelector(".word-stage");
 const abcSection = document.querySelector(".abc-section");
+const livesLeftH2 = document.querySelector(".lives-left-h2");
 
 const alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
@@ -12,7 +13,8 @@ let randomWord = randomWordsCollection[randomIndex];
 // remove eventually
 console.log(`Random word: ${randomWord}`);
 
-let remainingLetters = randomWord.length;
+// let remainingLetters = randomWord.length;
+let livesLeft = 10;
 let wordDisplay = [];
 
 // ------------------------
@@ -29,6 +31,11 @@ const paragraphElement = document.createElement("p");
 paragraphElement.appendChild(wordAsString);
 paragraphElement.classList.add("paragraph-element");
 wordStage.appendChild(paragraphElement);
+
+// ------------------------
+// Display Lives Left
+// ------------------------
+livesLeftH2.append(livesLeft);
 
 // ------------------------
 // Create ABC Buttons
@@ -64,14 +71,15 @@ function createAbcButtons() {
 function findLetterMatch(evt) {
     let buttonGuess = evt.target.innerHTML;
 
-    if (remainingLetters > 0) {
+    if (livesLeft > 0) {
         if (!randomWord.match(buttonGuess)) {
             console.log(`${buttonGuess} is incorrect.`);
         } else {
             for (let i = 0; i < randomWord.length; i++) {
                 if (randomWord[i] === buttonGuess) {
                     wordDisplay[i] = buttonGuess;
-                    remainingLetters--;
+                    // replace with # of lives
+                    // remainingLetters--;
                     wordAsString.nodeValue = wordDisplay.join(" ");
                 }
             }
