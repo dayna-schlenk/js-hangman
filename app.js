@@ -2,8 +2,9 @@
 // Variables
 // ------------------------
 const abcButtons = document.querySelectorAll(".abc-btns");
-const alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 const wordStage = document.querySelector(".word-stage");
+
+const alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
 const randomWordsCollection = ["hello", "bear", "mountain"];
 let randomIndex = Math.floor(Math.random() * randomWordsCollection.length);
@@ -32,10 +33,7 @@ wordStage.appendChild(paragraphElement);
 // ------------------------
 // Create ABC Buttons
 // ------------------------
-// create alphabet array
-// loop through array
-    // create button element with that letter as the button text
-    // append button to html div (as a child)
+createAbcButtons();
 
 // ------------------------
 // Event Listeners
@@ -50,6 +48,15 @@ for (let btn of abcButtons) {
 function createWordStage() {
     for (let letter of randomWord) {
         wordDisplay.push("_");
+    }
+}
+
+function createAbcButtons() {
+    // loop through array
+        // create button element with that letter as the button text
+        // append button to html div (as a child)
+    for (let letter of alphabet) {
+        console.log(`ABC letter: ${letter}`);
     }
 }
 
