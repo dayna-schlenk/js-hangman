@@ -1,7 +1,6 @@
 // ------------------------
 // Variables
 // ------------------------
-const abcButtons = document.querySelectorAll(".abc-btns");
 const wordStage = document.querySelector(".word-stage");
 const abcSection = document.querySelector(".abc-section");
 
@@ -35,6 +34,7 @@ wordStage.appendChild(paragraphElement);
 // Create ABC Buttons
 // ------------------------
 createAbcButtons();
+const abcButtons = document.querySelectorAll(".abc-btns");
 
 // ------------------------
 // Event Listeners
