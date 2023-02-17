@@ -75,8 +75,11 @@ function findLetterMatch(evt) {
                     wordAsString.nodeValue = wordDisplay.join(" ");
                 }
             }
-        }  
+        }
+        
     } else {
         console.log("You have no more letters!");
     }
+
+    evt.target.setAttribute("disabled", true);
 }
