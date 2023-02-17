@@ -3,6 +3,7 @@
 // ------------------------
 const abcButtons = document.querySelectorAll(".abc-btns");
 const wordStage = document.querySelector(".word-stage");
+const abcSection = document.querySelector(".abc-section");
 
 const alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
@@ -52,11 +53,11 @@ function createWordStage() {
 }
 
 function createAbcButtons() {
-    // loop through array
-        // create button element with that letter as the button text
-        // append button to html div (as a child)
     for (let letter of alphabet) {
-        console.log(`ABC letter: ${letter}`);
+        let newButton = document.createElement("button");
+        newButton.innerText = letter;
+        newButton.classList.add("abc-btns");
+        abcSection.appendChild(newButton);
     }
 }
 
