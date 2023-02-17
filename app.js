@@ -29,6 +29,14 @@ paragraphElement.classList.add("paragraph-element");
 wordStage.appendChild(paragraphElement);
 
 // ------------------------
+// Create ABC Buttons
+// ------------------------
+// create alphabet array
+// loop through array
+    // create button element with that letter as the button text
+    // append button to html div (as a child)
+
+// ------------------------
 // Event Listeners
 // ------------------------
 for (let btn of abcButtons) {
