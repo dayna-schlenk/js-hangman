@@ -6,7 +6,7 @@ const abcSection = document.querySelector(".abc-section");
 
 const alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
-const randomWordsCollection = ["hello", "bear", "mountain"];
+const randomWordsCollection = ["hello", "bear", "mountain", "cat", "coffee", "school", "capitalism", "heart", "dog", "mortgage", "workspace", "travel", "journal", "lake", "dragon", "purple", "expensive", "snow"];
 let randomIndex = Math.floor(Math.random() * randomWordsCollection.length);
 let randomWord = randomWordsCollection[randomIndex];
 // remove eventually
