@@ -3,7 +3,8 @@
 // ------------------------
 const wordStage = document.querySelector(".word-stage");
 const abcSection = document.querySelector(".abc-section");
-const livesLeftH2 = document.querySelector(".lives-left-h2");
+// const livesLeftH2 = document.querySelector(".lives-left-h2");
+const livesLeftSection = document.querySelector(".lives-left-section");
 
 const alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
@@ -48,7 +49,10 @@ for (let btn of abcButtons) {
 // ------------------------
 // Display Lives Left
 // ------------------------
-livesLeftH2.append(livesLeft);
+const livesLeftPTag = document.createElement("p");
+livesLeftPTag.append(livesLeft);
+livesLeftPTag.classList.add("lives-left-p");
+livesLeftSection.appendChild(livesLeftPTag);
 
 // ------------------------
 // Functions
@@ -74,19 +78,16 @@ function findLetterMatch(evt) {
     if (livesLeft > 0) {
         if (!randomWord.match(buttonGuess)) {
             console.log(`${buttonGuess} is incorrect.`);
+            livesLeft--;
+            console.log(`You have ${livesLeft} lives left.`);
         } else {
             for (let i = 0; i < randomWord.length; i++) {
                 if (randomWord[i] === buttonGuess) {
                     wordDisplay[i] = buttonGuess;
-                    // remainingLetters--;
                     wordAsString.nodeValue = wordDisplay.join(" ");
                 }
             }
         }
-
-        livesLeft--;
-        console.log(`You have ${livesLeft} lives left.`);
-        
     } else {
         console.log("You have no more lives!");
     }
