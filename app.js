@@ -50,7 +50,7 @@ for (let btn of abcButtons) {
 // Display Lives Left
 // ------------------------
 const livesLeftPTag = document.createElement("p");
-livesLeftPTag.append(livesLeft);
+livesLeftPTag.innerHTML = livesLeft;
 livesLeftPTag.classList.add("lives-left-p");
 livesLeftSection.appendChild(livesLeftPTag);
 
@@ -94,3 +94,11 @@ function findLetterMatch(evt) {
 
     evt.target.setAttribute("disabled", true);
 }
+
+// function showLives() {
+//     // call this function within findLetterMatch function, after main if-else
+//     // create p tag called showLives
+//     // set innerHTML of showLives to be "You have " + livesLeft + " lives"
+//     // if livesLeft < 1
+//         // showLives.innerHTML = "Game Over"
+// }
