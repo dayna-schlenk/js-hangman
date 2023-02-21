@@ -83,13 +83,26 @@ function findLetterMatch(evt) {
                 }
             }
         }
+
+        evt.target.setAttribute("disabled", true);
     } else {
         console.log("You have no more lives!");
+        // alert: Game Over
+        // disable all buttons
     }
 
-    evt.target.setAttribute("disabled", true);
+    // evt.target.setAttribute("disabled", true);
 }
 
 function showLives() {
     lifeSpan.innerHTML = livesLeft;
 }
+
+// Winner (or Loser) Logic
+
+// if (livesLeft < 1 && wordAstString.match("_"))
+    // alert("You lost")
+    // disable all buttons
+// else if (!wordAsString.match("_"))
+    // alert("You won!")
+    // disable all buttons
