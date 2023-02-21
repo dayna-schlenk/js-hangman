@@ -71,10 +71,7 @@ function findLetterMatch(evt) {
 
     if (livesLeft > 0) {
         if (!randomWord.match(buttonGuess)) {
-            console.log(`${buttonGuess} is incorrect.`);
             livesLeft--;
-            console.log(`You have ${livesLeft} lives left.`);
-            showLives();
         } else {
             for (let i = 0; i < randomWord.length; i++) {
                 if (randomWord[i] === buttonGuess) {
@@ -83,20 +80,21 @@ function findLetterMatch(evt) {
                 }
             }
         }
-
-        evt.target.setAttribute("disabled", true);
     } else {
-        console.log("You have no more lives!");
-        // alert: Game Over
-        // disable all buttons
+        console.log("You're done!");
     }
 
-    // evt.target.setAttribute("disabled", true);
+    showLives();
+    evt.target.setAttribute("disabled", true);
 }
 
 function showLives() {
     lifeSpan.innerHTML = livesLeft;
 }
+
+// function determineResult() {
+    
+// }
 
 // Winner (or Loser) Logic
 
