@@ -1,10 +1,10 @@
 // ------------------------
-// Variables
+// Query Selector Variables
 // ------------------------
 const wordStage = document.querySelector(".word-stage");
 const abcSection = document.querySelector(".abc-section");
-// const livesLeftH2 = document.querySelector(".lives-left-h2");
 const livesLeftSection = document.querySelector(".lives-left-section");
+const lifeSpan = document.querySelector(".life-span");
 
 const alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
@@ -14,13 +14,10 @@ let randomWord = randomWordsCollection[randomIndex];
 // remove eventually
 console.log(`Random word: ${randomWord}`);
 
-// let remainingLetters = randomWord.length;
-let livesLeft = 10;
-let wordDisplay = [];
-
 // ------------------------
 // Set Up Word Stage
 // ------------------------
+let wordDisplay = [];
 createWordStage();
 
 // ------------------------
@@ -49,10 +46,7 @@ for (let btn of abcButtons) {
 // ------------------------
 // Display Lives Left
 // ------------------------
-const livesLeftPTag = document.createElement("p");
-livesLeftPTag.innerHTML = livesLeft;
-livesLeftPTag.classList.add("lives-left-p");
-livesLeftSection.appendChild(livesLeftPTag);
+let livesLeft = 10;
 
 // ------------------------
 // Functions
@@ -80,6 +74,7 @@ function findLetterMatch(evt) {
             console.log(`${buttonGuess} is incorrect.`);
             livesLeft--;
             console.log(`You have ${livesLeft} lives left.`);
+            showLives();
         } else {
             for (let i = 0; i < randomWord.length; i++) {
                 if (randomWord[i] === buttonGuess) {
@@ -95,10 +90,6 @@ function findLetterMatch(evt) {
     evt.target.setAttribute("disabled", true);
 }
 
-// function showLives() {
-//     // call this function within findLetterMatch function, after main if-else
-//     // create p tag called showLives
-//     // set innerHTML of showLives to be "You have " + livesLeft + " lives"
-//     // if livesLeft < 1
-//         // showLives.innerHTML = "Game Over"
-// }
+function showLives() {
+    lifeSpan.innerHTML = livesLeft;
+}
