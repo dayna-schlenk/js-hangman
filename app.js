@@ -106,12 +106,3 @@ function determineResult() {
         disableAllButtons();
     }
 }
-
-// Winner (or Loser) Logic
-
-// if (livesLeft < 1 && wordAstString.match("_"))
-    // alert("You lost")
-    // disable all buttons
-// else if (!wordAsString.match("_"))
-    // alert("You won!")
-    // disable all buttons
