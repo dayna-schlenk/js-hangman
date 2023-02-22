@@ -43,10 +43,11 @@ for (let btn of abcButtons) {
     btn.addEventListener("click", findLetterMatch);
 }
 
-// ------------------------
-// Display Lives Left
-// ------------------------
+// -------------------------------
+// Variables to Track Game Result
+// -------------------------------
 let livesLeft = 10;
+let correctGuesses = 0;
 
 // ------------------------
 // Functions
@@ -92,9 +93,21 @@ function showLives() {
     lifeSpan.innerHTML = livesLeft;
 }
 
-// function determineResult() {
-    
-// }
+function disableAllButtons() {
+    for (let button of abcButtons) {
+        button.setAttribute("disabled", true);
+    }
+}
+
+function determineResult() {
+    if (correctGuesses === randomWord.length && livesLeft > 0) {
+        alert("You win!");
+        disableAllButtons();
+    } else if (livesLeft <= 0) {
+        alert("You lost :(");
+        disableAllButtons();
+    }
+}
 
 // Winner (or Loser) Logic
 
