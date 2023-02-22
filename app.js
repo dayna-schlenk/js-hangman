@@ -70,23 +70,21 @@ function createAbcButtons() {
 function findLetterMatch(evt) {
     let buttonGuess = evt.target.innerHTML;
 
-    if (livesLeft > 0) {
-        if (!randomWord.match(buttonGuess)) {
-            livesLeft--;
-        } else {
-            for (let i = 0; i < randomWord.length; i++) {
-                if (randomWord[i] === buttonGuess) {
-                    wordDisplay[i] = buttonGuess;
-                    wordAsString.nodeValue = wordDisplay.join(" ");
-                }
+    if (!randomWord.match(buttonGuess)) {
+        livesLeft--;
+    } else {
+        for (let i = 0; i < randomWord.length; i++) {
+            if (randomWord[i] === buttonGuess) {
+                correctGuesses++;
+                wordDisplay[i] = buttonGuess;
+                wordAsString.nodeValue = wordDisplay.join(" ");
             }
         }
-    } else {
-        console.log("You're done!");
     }
 
     showLives();
     evt.target.setAttribute("disabled", true);
+    determineResult();
 }
 
 function showLives() {
