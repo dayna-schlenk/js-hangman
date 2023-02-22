@@ -99,10 +99,10 @@ function disableAllButtons() {
 
 function determineResult() {
     if (correctGuesses === randomWord.length && livesLeft > 0) {
-        alert("You win!");
         disableAllButtons();
-    } else if (livesLeft <= 0) {
-        alert("You lost :(");
+        console.log("You win!");
+    } else if (livesLeft < 1) {
         disableAllButtons();
+        console.log("You lost :(");
     }
 }
