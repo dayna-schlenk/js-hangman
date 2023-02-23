@@ -109,3 +109,7 @@ function determineResult() {
         console.log("You lost :(");
     }
 }
+
+function resetGame() {
+    console.log("Game is reset!");
+}
