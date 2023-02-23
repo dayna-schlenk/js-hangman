@@ -5,6 +5,7 @@ const wordStage = document.querySelector(".word-stage");
 const abcSection = document.querySelector(".abc-section");
 const livesLeftSection = document.querySelector(".lives-left-section");
 const lifeSpan = document.querySelector(".life-span");
+const resetBtn = document.querySelector(".reset");
 
 const alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
@@ -42,6 +43,8 @@ const abcButtons = document.querySelectorAll(".abc-btns");
 for (let btn of abcButtons) {
     btn.addEventListener("click", findLetterMatch);
 }
+
+resetBtn.addEventListener("click", resetGame);
 
 // -------------------------------
 // Variables to Track Game Result
