@@ -8,21 +8,19 @@ const gameStatus = document.querySelector(".game-status");
 const lifeSpan = document.querySelector(".life-span");
 const resetBtn = document.querySelector(".reset");
 
-const alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-
+// ------------------------
+// Generate Random Word
+// ------------------------
 const randomWordsCollection = ["hello", "bear", "mountain", "cat", "coffee", "school", "capitalism", "heart", "dog", "mortgage", "workspace", "travel", "journal", "lake", "dragon", "purple", "expensive", "snow", "dumpster", "fragile", "plant", "swimming", "turquoise", "crayon", "turkey", "pencil", "speaker", "favorite", "soup", "glasses", "tea"];
 let randomIndex = Math.floor(Math.random() * randomWordsCollection.length);
 let randomWord = randomWordsCollection[randomIndex];
 
-// ------------------------
-// Set Up Word Stage
-// ------------------------
+// ----------------------------------
+// Set Up Word Stage & String for UI
+// ----------------------------------
 let wordDisplay = [];
 createWordStage();
 
-// ------------------------
-// Set Up String for UI
-// ------------------------
 let wordAsString = document.createTextNode(wordDisplay.join(" "));
 const paragraphElement = document.createElement("p");
 
@@ -33,6 +31,8 @@ wordStage.appendChild(paragraphElement);
 // ------------------------
 // Create ABC Buttons
 // ------------------------
+const alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+
 createAbcButtons();
 const abcButtons = document.querySelectorAll(".abc-btns");
 
