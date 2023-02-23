@@ -4,16 +4,15 @@
 const wordStage = document.querySelector(".word-stage");
 const abcSection = document.querySelector(".abc-section");
 const livesLeftSection = document.querySelector(".lives-left-section");
+const gameStatus = document.querySelector(".game-status");
 const lifeSpan = document.querySelector(".life-span");
 const resetBtn = document.querySelector(".reset");
 
 const alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
-const randomWordsCollection = ["hello", "bear", "mountain", "cat", "coffee", "school", "capitalism", "heart", "dog", "mortgage", "workspace", "travel", "journal", "lake", "dragon", "purple", "expensive", "snow"];
+const randomWordsCollection = ["hello", "bear", "mountain", "cat", "coffee", "school", "capitalism", "heart", "dog", "mortgage", "workspace", "travel", "journal", "lake", "dragon", "purple", "expensive", "snow", "dumpster", "fragile", "plant", "swimming", "turquoise", "crayon", "turkey", "pencil", "speaker", "favorite", "soup", "glasses", "tea"];
 let randomIndex = Math.floor(Math.random() * randomWordsCollection.length);
 let randomWord = randomWordsCollection[randomIndex];
-// remove eventually
-console.log(`Random word: ${randomWord}`);
 
 // ------------------------
 // Set Up Word Stage
@@ -103,14 +102,13 @@ function disableAllButtons() {
 function determineResult() {
     if (correctGuesses === randomWord.length && livesLeft > 0) {
         disableAllButtons();
-        console.log("You win!");
+        gameStatus.innerHTML = "You won!" + String.fromCodePoint(128512);
     } else if (livesLeft < 1) {
         disableAllButtons();
-        console.log("You lost :(");
+        gameStatus.innerHTML = "You lost " + String.fromCodePoint(128531);
     }
 }
 
 function resetGame() {
     window.location.reload();
-    console.log("Game is reset!");
 }
