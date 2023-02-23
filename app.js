@@ -111,5 +111,6 @@ function determineResult() {
 }
 
 function resetGame() {
+    window.location.reload();
     console.log("Game is reset!");
 }
