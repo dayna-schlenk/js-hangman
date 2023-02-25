@@ -25,7 +25,7 @@ let wordAsString = document.createTextNode(wordDisplay.join(" "));
 const paragraphElement = document.createElement("p");
 
 paragraphElement.appendChild(wordAsString);
-paragraphElement.classList.add("paragraph-element");
+paragraphElement.classList.add("paragraph-element", "mb-0");
 wordStage.appendChild(paragraphElement);
 
 // ------------------------
