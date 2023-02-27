@@ -25,6 +25,7 @@
 body {
     font-family: 'Golos Text', sans-serif;
     font-size: 1.25rem;
+    color: #424257;
 }
 
 .grid-container {
@@ -42,6 +43,9 @@ body {
 
 .word-stage {
     font-size: 3rem;
+    background-color: #F2EAE1;
+    border: 3px solid #424257;
+    border-radius: 5px;
 }
 
 /* .abc-buttons {
