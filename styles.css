@@ -55,5 +55,6 @@ body {
 }
 
 .abc-btns:hover {
-    background-color: #5261b3;
+    background-color: #343d72;
+    color: white;
 }
