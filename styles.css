@@ -45,6 +45,16 @@ body {
     font-size: 1.25rem;
 }
 
+.reset {
+    background-color: #6070ce;
+    color: white;
+}
+
+.reset:hover {
+    background-color: #414C8D;
+    color: white;
+}
+
 .word-stage {
     font-size: 3rem;
     background-color: #F2EAE1;
