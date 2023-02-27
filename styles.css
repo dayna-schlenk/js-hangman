@@ -24,6 +24,7 @@
 
 body {
     font-family: 'Golos Text', sans-serif;
+    font-size: 1.25rem;
 }
 
 .grid-container {
@@ -32,6 +33,11 @@ body {
 
 .title {
     font-family: 'Tilt Warp', cursive;
+    font-size: 3rem;
+}
+
+.buttons {
+    font-size: 1.25rem;
 }
 
 /* .abc-buttons {
