@@ -37,6 +37,10 @@ body {
     font-size: 3rem;
 }
 
+.game-status {
+    font-weight: 700;
+}
+
 .buttons {
     font-size: 1.25rem;
 }
