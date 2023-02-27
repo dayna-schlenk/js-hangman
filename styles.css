@@ -48,6 +48,12 @@ body {
     border-radius: 5px;
 }
 
-/* .abc-buttons {
-    // enter styles here
-} */
+.abc-btns {
+    background-color: #414C8D;
+    color: white;
+    width: 4rem;
+}
+
+.abc-btns:hover {
+    background-color: #5261b3;
+}
