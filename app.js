@@ -64,7 +64,7 @@ function createAbcButtons() {
     for (let letter of alphabet) {
         let newButton = document.createElement("button");
         newButton.innerText = letter;
-        newButton.classList.add("btn", "btn-secondary", "m-2", "abc-btns");
+        newButton.classList.add("btn", "btn-secondary", "m-2", "py-3", "px-4", "abc-btns");
         abcSection.appendChild(newButton);
     }
 }
