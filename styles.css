@@ -43,6 +43,7 @@ body {
     background-color: #414C8D;
     color: white;
     width: 4rem;
+    padding: 1rem 1.5rem;
 }
 
 .abc-btns:hover {
@@ -72,5 +73,9 @@ body {
 
     .buttons {
         font-size: 1rem;
+    }
+
+    .abc-btns {
+        padding: 0.75rem 1rem;
     }
 }
