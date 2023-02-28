@@ -49,3 +49,28 @@ body {
     background-color: #343d72;
     color: white;
 }
+
+/* ------------- */
+/* Media Queries */
+/* ------------- */
+@media screen and (max-width: 400px) {
+    body {
+        font-size: 1rem;
+    }
+
+    .title {
+        font-size: 2.5rem;
+    }
+
+    .game-status {
+        font-size: 1.25rem;
+    }
+
+    .word-stage {
+        font-size: 2.5rem;
+    }
+
+    .buttons {
+        font-size: 1rem;
+    }
+}
