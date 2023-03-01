@@ -20,7 +20,7 @@ console.log(`Random word: ${randomWord}`);
 // Set Up Word Stage & String for UI
 // ----------------------------------
 let wordDisplay = [];
-createWordStage();
+setUpWordStage(wordDisplay);
 
 let wordAsString = document.createTextNode(wordDisplay.join(" "));
 const paragraphElement = document.createElement("p");
@@ -56,9 +56,9 @@ let correctGuesses = 0;
 // ------------------------
 // Functions
 // ------------------------
-function createWordStage() {
+function setUpWordStage(wordDisplayArray) {
     for (let letter of randomWord) {
-        wordDisplay.push("_");
+        wordDisplayArray.push("_");
     }
 }
 
@@ -111,6 +111,18 @@ function determineResult() {
     }
 }
 
+function updateWordStage() {
+    wordDisplay = [];
+    setUpWordStage(wordDisplay);
+    wordAsString = wordDisplay.join(" ");
+
+    paragraphElement.remove(wordAsString);
+    paragraphElement.append(wordAsString);
+
+    wordStage.remove(paragraphElement);
+    wordStage.append(paragraphElement);
+}
+
 function resetGame() {
     livesLeft = 15;
     gameStatus.innerHTML = "You have " + livesLeft + " lives left";
@@ -120,7 +132,7 @@ function resetGame() {
     randomWord = randomWordsCollection[randomIndex];
     console.log(`New random word: ${randomWord}`);
 
-    // reset word stage
+    updateWordStage();
 
     for (let button of abcButtons) {
         button.removeAttribute("disabled");
