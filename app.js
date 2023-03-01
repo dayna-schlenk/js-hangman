@@ -14,6 +14,7 @@ const resetBtn = document.querySelector(".reset");
 const randomWordsCollection = ["hello", "bear", "mountain", "cat", "coffee", "school", "capitalism", "heart", "dog", "mortgage", "workspace", "travel", "journal", "lake", "dragon", "purple", "expensive", "snow", "dumpster", "fragile", "plant", "swimming", "turquoise", "crayon", "turkey", "pencil", "speaker", "favorite", "soup", "glasses", "tea"];
 let randomIndex = Math.floor(Math.random() * randomWordsCollection.length);
 let randomWord = randomWordsCollection[randomIndex];
+console.log(`Random word: ${randomWord}`);
 
 // ----------------------------------
 // Set Up Word Stage & String for UI
@@ -113,11 +114,17 @@ function determineResult() {
 function resetGame() {
     // window.location.reload();
     livesLeft = 15;
+    gameStatus.innerHTML = "You have " + livesLeft + " lives left";
     showLives();
 
-    // generate random word
+    randomIndex = Math.floor(Math.random() * randomWordsCollection.length);
+    randomWord = randomWordsCollection[randomIndex];
+    console.log(`New random word: ${randomWord}`);
+
+    wordDisplay = [];
+    createWordStage();
 
     for (let button of abcButtons) {
-        button.setAttribute("disabled", false);
+        button.removeAttribute("disabled");
     }
 }
