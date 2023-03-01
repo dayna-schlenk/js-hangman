@@ -112,7 +112,6 @@ function determineResult() {
 }
 
 function resetGame() {
-    // window.location.reload();
     livesLeft = 15;
     gameStatus.innerHTML = "You have " + livesLeft + " lives left";
     showLives();
@@ -121,8 +120,7 @@ function resetGame() {
     randomWord = randomWordsCollection[randomIndex];
     console.log(`New random word: ${randomWord}`);
 
-    wordDisplay = [];
-    createWordStage();
+    // reset word stage
 
     for (let button of abcButtons) {
         button.removeAttribute("disabled");
