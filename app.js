@@ -111,5 +111,13 @@ function determineResult() {
 }
 
 function resetGame() {
-    window.location.reload();
+    // window.location.reload();
+    livesLeft = 15;
+    showLives();
+
+    // generate random word
+
+    for (let button of abcButtons) {
+        button.setAttribute("disabled", false);
+    }
 }
