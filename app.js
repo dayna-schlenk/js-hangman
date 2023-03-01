@@ -48,7 +48,8 @@ resetBtn.addEventListener("click", resetGame);
 // -------------------------------
 // Variables to Track Game Result
 // -------------------------------
-let livesLeft = 10;
+let livesLeft = 15;
+showLives();
 let correctGuesses = 0;
 
 // ------------------------
