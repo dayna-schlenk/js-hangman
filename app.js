@@ -116,11 +116,9 @@ function updateWordStage() {
     setUpWordStage(wordDisplay);
     wordAsString = wordDisplay.join(" ");
 
-    paragraphElement.remove(wordAsString);
-    paragraphElement.append(wordAsString);
+    console.log(`New wordAsString: ${wordAsString}`);
 
-    wordStage.remove(paragraphElement);
-    wordStage.append(paragraphElement);
+    paragraphElement.innerHTML = wordAsString;
 }
 
 function resetGame() {
