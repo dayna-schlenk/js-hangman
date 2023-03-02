@@ -19,16 +19,6 @@ function disableAllButtons() {
     }
 }
 
-function determineResult() {
-    if (correctGuesses === randomWord.length && livesLeft > 0) {
-        disableAllButtons();
-        gameStatus.innerHTML = "You won!" + String.fromCodePoint(128512);
-    } else if (livesLeft < 1) {
-        disableAllButtons();
-        gameStatus.innerHTML = "You lost " + String.fromCodePoint(128531);
-    }
-}
-
 function updateWordStage() {
     wordDisplay = [];
     setUpWordStage(wordDisplay);
@@ -72,8 +62,8 @@ function resetGame() {
 
 // INCLUDED IN PLAY GAME FUNCTION
 // findLetterMatch() -> DONE
-// showLives()
-// determineResult()
+// showLives() -> DONE
+// determineResult() -> DONE
 
 // ON BUTTON-CLICK
 // resetGame() -> includes disableAllButtons() & updateWordStage() & playGame()
@@ -159,4 +149,14 @@ function findLetterMatch(evt) {
 
 function showLives() {
     lifeSpan.innerHTML = livesLeft;
+}
+
+function determineResult() {
+    if (correctGuesses === randomWord.length && livesLeft > 0) {
+        disableAllButtons();
+        gameStatus.innerHTML = "You won!" + String.fromCodePoint(128512);
+    } else if (livesLeft < 1) {
+        disableAllButtons();
+        gameStatus.innerHTML = "You lost " + String.fromCodePoint(128531);
+    }
 }
