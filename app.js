@@ -13,42 +13,6 @@ const resetBtn = document.querySelector(".reset");
 // ------------------------
 resetBtn.addEventListener("click", resetGame);
 
-function disableAllButtons() {
-    for (let button of abcButtons) {
-        button.setAttribute("disabled", true);
-    }
-}
-
-function updateWordStage() {
-    wordDisplay = [];
-    setUpWordStage(wordDisplay);
-    wordAsString = wordDisplay.join(" ");
-
-    console.log(`New wordAsString: ${wordAsString}`);
-
-    paragraphElement.innerHTML = wordAsString;
-}
-
-function resetGame() {
-    // not sure if this works
-    livesLeft = 15;
-    gameStatus.innerHTML = "You have " + livesLeft + " lives left";
-    showLives();
-
-    // this works
-    randomIndex = Math.floor(Math.random() * randomWordsCollection.length);
-    randomWord = randomWordsCollection[randomIndex];
-    console.log(`New random word: ${randomWord}`);
-
-    // does NOT work
-    updateWordStage();
-
-    // this works
-    for (let button of abcButtons) {
-        button.removeAttribute("disabled");
-    }
-}
-
 // ------------------------
 // Refactor
 // ------------------------
@@ -159,4 +123,35 @@ function determineResult() {
         disableAllButtons();
         gameStatus.innerHTML = "You lost " + String.fromCodePoint(128531);
     }
+}
+
+function disableAllButtons() {
+    for (let button of abcButtons) {
+        button.setAttribute("disabled", true);
+    }
+}
+
+function updateWordStage() {
+    wordDisplay = [];
+    setUpWordStage(wordDisplay);
+    wordAsString = wordDisplay.join(" ");
+
+    console.log(`New wordAsString: ${wordAsString}`);
+
+    paragraphElement.innerHTML = wordAsString;
+}
+
+function resetGame() {
+    generateRandomWord();
+    updateWordStage();
+
+    livesLeft = 15;
+    gameStatus.innerHTML = "You have " + livesLeft + " lives left";
+    showLives();
+
+    for (let button of abcButtons) {
+        button.removeAttribute("disabled");
+    }
+
+    playGame();
 }
