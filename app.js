@@ -9,27 +9,6 @@ const lifeSpan = document.querySelector(".life-span");
 const resetBtn = document.querySelector(".reset");
 
 // ------------------------
-// Generate Random Word
-// ------------------------
-const randomWordsCollection = ["hello", "bear", "mountain", "cat", "coffee", "school", "capitalism", "heart", "dog", "mortgage", "workspace", "travel", "journal", "lake", "dragon", "purple", "expensive", "snow", "dumpster", "fragile", "plant", "swimming", "turquoise", "crayon", "turkey", "pencil", "speaker", "favorite", "soup", "glasses", "tea"];
-let randomIndex = Math.floor(Math.random() * randomWordsCollection.length);
-let randomWord = randomWordsCollection[randomIndex];
-console.log(`Random word: ${randomWord}`);
-
-// ----------------------------------
-// Set Up Word Stage & String for UI
-// ----------------------------------
-let wordDisplay = [];
-setUpWordStage(wordDisplay);
-
-let wordAsString = document.createTextNode(wordDisplay.join(" "));
-const paragraphElement = document.createElement("p");
-
-paragraphElement.appendChild(wordAsString);
-paragraphElement.classList.add("paragraph-element", "mb-0");
-wordStage.appendChild(paragraphElement);
-
-// ------------------------
 // Create ABC Buttons
 // ------------------------
 const alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
@@ -56,11 +35,6 @@ let correctGuesses = 0;
 // ------------------------
 // Functions
 // ------------------------
-function setUpWordStage(wordDisplayArray) {
-    for (let letter of randomWord) {
-        wordDisplayArray.push("_");
-    }
-}
 
 function createAbcButtons() {
     for (let letter of alphabet) {
@@ -158,3 +132,36 @@ function resetGame() {
 
 // ON BUTTON-CLICK
 // resetGame() -> includes disableAllButtons() & updateWordStage() & playGame()
+
+// Initial Variables
+let randomWordsCollection = [];
+let randomWord = "";
+let wordDisplay = [];
+let wordAsString = "";
+const paragraphElement = document.createElement("p");
+
+// On-Load Function Calls
+generateRandomWord();
+setUpWordStage();
+
+// Updated Functions
+function generateRandomWord() {
+    randomWordsCollection = ["hello", "bear", "mountain", "cat", "coffee", "school", "capitalism", "heart", "dog", "mortgage", "workspace", "travel", "journal", "lake", "dragon", "purple", "expensive", "snow", "dumpster", "fragile", "plant", "swimming", "turquoise", "crayon", "turkey", "pencil", "speaker", "favorite", "soup", "glasses", "tea"];
+
+    let randomIndex = Math.floor(Math.random() * randomWordsCollection.length);
+    randomWord = randomWordsCollection[randomIndex];
+
+    console.log(`Random word: ${randomWord}`);
+}
+
+function setUpWordStage() {
+    for (let letter of randomWord) {
+        wordDisplay.push("_");
+    }
+
+    wordAsString = document.createTextNode(wordDisplay.join(" "));
+
+    paragraphElement.appendChild(wordAsString);
+    paragraphElement.classList.add("paragraph-element", "mb-0");
+    wordStage.appendChild(paragraphElement);
+}
