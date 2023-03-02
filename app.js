@@ -140,3 +140,21 @@ function resetGame() {
         button.removeAttribute("disabled");
     }
 }
+
+// ------------------------
+// Refactor
+// ------------------------
+
+// ON-LOAD FUNCTIONS
+// generateRandomWord()
+// setUpWordStage()
+// createAbcButtons()
+// playGame()
+
+// INCLUDED IN PLAY GAME FUNCTION
+// findLetterMatch()
+// showLives()
+// determineResult()
+
+// ON BUTTON-CLICK
+// resetGame() -> includes disableAllButtons() & updateWordStage() & playGame()
