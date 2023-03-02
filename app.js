@@ -23,26 +23,6 @@ let correctGuesses = 0;
 // ------------------------
 // Functions
 // ------------------------
-function findLetterMatch(evt) {
-    let buttonGuess = evt.target.innerHTML;
-
-    if (!randomWord.match(buttonGuess)) {
-        livesLeft--;
-    } else {
-        for (let i = 0; i < randomWord.length; i++) {
-            if (randomWord[i] === buttonGuess) {
-                correctGuesses++;
-                wordDisplay[i] = buttonGuess;
-                wordAsString.nodeValue = wordDisplay.join(" ");
-            }
-        }
-    }
-
-    showLives();
-    evt.target.setAttribute("disabled", true);
-    determineResult();
-}
-
 function showLives() {
     lifeSpan.innerHTML = livesLeft;
 }
@@ -125,11 +105,6 @@ setUpWordStage();
 createAbcButtons();
 playGame();
 
-// Event Listeners
-for (let btn of abcButtons) {
-    btn.addEventListener("click", findLetterMatch);
-}
-
 // Updated Functions
 function generateRandomWord() {
     randomWordsCollection = ["hello", "bear", "mountain", "cat", "coffee", "school", "capitalism", "heart", "dog", "mortgage", "workspace", "travel", "journal", "lake", "dragon", "purple", "expensive", "snow", "dumpster", "fragile", "plant", "swimming", "turquoise", "crayon", "turkey", "pencil", "speaker", "favorite", "soup", "glasses", "tea"];
@@ -166,5 +141,28 @@ function createAbcButtons() {
 }
 
 function playGame() {
-    console.log("Playing the game!");
+    for (let btn of abcButtons) {
+        btn.addEventListener("click", findLetterMatch);
+    }
+}
+
+// Included in playGame function...
+function findLetterMatch(evt) {
+    let buttonGuess = evt.target.innerHTML;
+
+    if (!randomWord.match(buttonGuess)) {
+        livesLeft--;
+    } else {
+        for (let i = 0; i < randomWord.length; i++) {
+            if (randomWord[i] === buttonGuess) {
+                correctGuesses++;
+                wordDisplay[i] = buttonGuess;
+                wordAsString.nodeValue = wordDisplay.join(" ");
+            }
+        }
+    }
+
+    showLives();
+    evt.target.setAttribute("disabled", true);
+    determineResult();
 }
