@@ -13,20 +13,6 @@ const resetBtn = document.querySelector(".reset");
 // ------------------------
 resetBtn.addEventListener("click", resetGame);
 
-// -------------------------------
-// Variables to Track Game Result
-// -------------------------------
-let livesLeft = 15;
-showLives();
-let correctGuesses = 0;
-
-// ------------------------
-// Functions
-// ------------------------
-function showLives() {
-    lifeSpan.innerHTML = livesLeft;
-}
-
 function disableAllButtons() {
     for (let button of abcButtons) {
         button.setAttribute("disabled", true);
@@ -79,12 +65,13 @@ function resetGame() {
 
 // ON-LOAD FUNCTIONS
 // generateRandomWord() -> DONE
+// showLives() -> DONE
 // setUpWordStage() -> DONE
 // createAbcButtons() -> DONE
 // playGame() -> DONE
 
 // INCLUDED IN PLAY GAME FUNCTION
-// findLetterMatch()
+// findLetterMatch() -> DONE
 // showLives()
 // determineResult()
 
@@ -97,10 +84,13 @@ let randomWord = "";
 let wordDisplay = [];
 let wordAsString = "";
 let abcButtons;
+let livesLeft = 15;
+let correctGuesses = 0;
 const paragraphElement = document.createElement("p");
 
 // On-Load Function Calls
 generateRandomWord();
+showLives();
 setUpWordStage();
 createAbcButtons();
 playGame();
@@ -165,4 +155,8 @@ function findLetterMatch(evt) {
     showLives();
     evt.target.setAttribute("disabled", true);
     determineResult();
+}
+
+function showLives() {
+    lifeSpan.innerHTML = livesLeft;
 }
