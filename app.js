@@ -1,36 +1,10 @@
-// ------------------------
 // Query Selector Variables
-// ------------------------
 const wordStage = document.querySelector(".word-stage");
 const abcSection = document.querySelector(".abc-section");
 const livesLeftSection = document.querySelector(".lives-left-section");
 const gameStatus = document.querySelector(".game-status");
 const lifeSpan = document.querySelector(".life-span");
 const resetBtn = document.querySelector(".reset");
-
-// ------------------------
-// Event Listeners
-// ------------------------
-resetBtn.addEventListener("click", resetGame);
-
-// ------------------------
-// Refactor
-// ------------------------
-
-// ON-LOAD FUNCTIONS
-// generateRandomWord() -> DONE
-// showLives() -> DONE
-// setUpWordStage() -> DONE
-// createAbcButtons() -> DONE
-// playGame() -> DONE
-
-// INCLUDED IN PLAY GAME FUNCTION
-// findLetterMatch() -> DONE
-// showLives() -> DONE
-// determineResult() -> DONE
-
-// ON BUTTON-CLICK
-// resetGame() -> includes disableAllButtons() & updateWordStage() & playGame()
 
 // Initial Variables
 let randomWordsCollection = [];
@@ -42,12 +16,15 @@ let livesLeft = 15;
 let correctGuesses = 0;
 const paragraphElement = document.createElement("p");
 
+// Event Listeners
+resetBtn.addEventListener("click", resetGame);
+
 // On-Load Function Calls
 generateRandomWord();
 showLives();
 setUpWordStage();
 createAbcButtons();
-playGame();
+// playGame();
 
 // Updated Functions
 function generateRandomWord() {
@@ -84,11 +61,17 @@ function createAbcButtons() {
     abcButtons = document.querySelectorAll(".abc-btns");
 }
 
-function playGame() {
-    for (let btn of abcButtons) {
-        btn.addEventListener("click", findLetterMatch);
-    }
+for (let btn of abcButtons) {
+    btn.addEventListener("click", findLetterMatch);
 }
+
+// function playGame() {
+//     // for (let btn of abcButtons) {
+//     //     btn.addEventListener("click", findLetterMatch);
+//     // }
+
+//     findLetterMatch();
+// }
 
 // Included in playGame function...
 function findLetterMatch(evt) {
@@ -131,16 +114,6 @@ function disableAllButtons() {
     }
 }
 
-function updateWordStage() {
-    wordDisplay = [];
-    setUpWordStage(wordDisplay);
-    wordAsString = wordDisplay.join(" ");
-
-    console.log(`New wordAsString: ${wordAsString}`);
-
-    paragraphElement.innerHTML = wordAsString;
-}
-
 function resetGame() {
     generateRandomWord();
     updateWordStage();
@@ -153,5 +126,19 @@ function resetGame() {
         button.removeAttribute("disabled");
     }
 
-    playGame();
+    // playGame();
+    for (let btn of abcButtons) {
+        btn.addEventListener("click", findLetterMatch);
+    }
+    // findLetterMatch(evt);
+}
+
+function updateWordStage() {
+    wordDisplay = [];
+    setUpWordStage(wordDisplay);
+    wordAsString = wordDisplay.join(" ");
+
+    console.log(`New wordAsString: ${wordAsString}`);
+
+    paragraphElement.innerHTML = wordAsString;
 }
