@@ -98,10 +98,10 @@ function resetGame() {
 // ------------------------
 
 // ON-LOAD FUNCTIONS
-// generateRandomWord()
-// setUpWordStage()
-// createAbcButtons()
-// playGame()
+// generateRandomWord() -> DONE
+// setUpWordStage() -> DONE
+// createAbcButtons() -> DONE
+// playGame() -> DONE
 
 // INCLUDED IN PLAY GAME FUNCTION
 // findLetterMatch()
@@ -123,6 +123,7 @@ const paragraphElement = document.createElement("p");
 generateRandomWord();
 setUpWordStage();
 createAbcButtons();
+playGame();
 
 // Event Listeners
 for (let btn of abcButtons) {
@@ -162,4 +163,8 @@ function createAbcButtons() {
     }
 
     abcButtons = document.querySelectorAll(".abc-btns");
+}
+
+function playGame() {
+    console.log("Playing the game!");
 }
