@@ -124,16 +124,20 @@ function updateWordStage() {
 }
 
 function resetGame() {
+    // not sure if this works
     livesLeft = 15;
     gameStatus.innerHTML = "You have " + livesLeft + " lives left";
     showLives();
 
+    // this works
     randomIndex = Math.floor(Math.random() * randomWordsCollection.length);
     randomWord = randomWordsCollection[randomIndex];
     console.log(`New random word: ${randomWord}`);
 
+    // does NOT work
     updateWordStage();
 
+    // this works
     for (let button of abcButtons) {
         button.removeAttribute("disabled");
     }
