@@ -9,20 +9,8 @@ const lifeSpan = document.querySelector(".life-span");
 const resetBtn = document.querySelector(".reset");
 
 // ------------------------
-// Create ABC Buttons
-// ------------------------
-const alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-
-createAbcButtons();
-const abcButtons = document.querySelectorAll(".abc-btns");
-
-// ------------------------
 // Event Listeners
 // ------------------------
-for (let btn of abcButtons) {
-    btn.addEventListener("click", findLetterMatch);
-}
-
 resetBtn.addEventListener("click", resetGame);
 
 // -------------------------------
@@ -35,16 +23,6 @@ let correctGuesses = 0;
 // ------------------------
 // Functions
 // ------------------------
-
-function createAbcButtons() {
-    for (let letter of alphabet) {
-        let newButton = document.createElement("button");
-        newButton.innerText = letter;
-        newButton.classList.add("btn", "m-2", "buttons", "abc-btns");
-        abcSection.appendChild(newButton);
-    }
-}
-
 function findLetterMatch(evt) {
     let buttonGuess = evt.target.innerHTML;
 
@@ -138,11 +116,18 @@ let randomWordsCollection = [];
 let randomWord = "";
 let wordDisplay = [];
 let wordAsString = "";
+let abcButtons;
 const paragraphElement = document.createElement("p");
 
 // On-Load Function Calls
 generateRandomWord();
 setUpWordStage();
+createAbcButtons();
+
+// Event Listeners
+for (let btn of abcButtons) {
+    btn.addEventListener("click", findLetterMatch);
+}
 
 // Updated Functions
 function generateRandomWord() {
@@ -164,4 +149,17 @@ function setUpWordStage() {
     paragraphElement.appendChild(wordAsString);
     paragraphElement.classList.add("paragraph-element", "mb-0");
     wordStage.appendChild(paragraphElement);
+}
+
+function createAbcButtons() {
+    const alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+
+    for (let letter of alphabet) {
+        let newButton = document.createElement("button");
+        newButton.innerText = letter;
+        newButton.classList.add("btn", "m-2", "buttons", "abc-btns");
+        abcSection.appendChild(newButton);
+    }
+
+    abcButtons = document.querySelectorAll(".abc-btns");
 }
