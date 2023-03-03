@@ -11,22 +11,25 @@ let randomWordsCollection = [];
 let randomWord = "";
 let wordDisplay = [];
 let wordAsString = "";
-let abcButtons;
+let abcButtons = [];
 let livesLeft = 15;
 let correctGuesses = 0;
 const paragraphElement = document.createElement("p");
-
-// Event Listeners
-resetBtn.addEventListener("click", resetGame);
 
 // On-Load Function Calls
 generateRandomWord();
 showLives();
 setUpWordStage();
 createAbcButtons();
-// playGame();
 
-// Updated Functions
+// Event Listeners
+for (let btn of abcButtons) {
+    btn.addEventListener("click", findLetterMatch);
+}
+
+resetBtn.addEventListener("click", resetGame);
+
+// Functions
 function generateRandomWord() {
     randomWordsCollection = ["hello", "bear", "mountain", "cat", "coffee", "school", "capitalism", "heart", "dog", "mortgage", "workspace", "travel", "journal", "lake", "dragon", "purple", "expensive", "snow", "dumpster", "fragile", "plant", "swimming", "turquoise", "crayon", "turkey", "pencil", "speaker", "favorite", "soup", "glasses", "tea"];
 
@@ -61,21 +64,9 @@ function createAbcButtons() {
     abcButtons = document.querySelectorAll(".abc-btns");
 }
 
-for (let btn of abcButtons) {
-    btn.addEventListener("click", findLetterMatch);
-}
-
-// function playGame() {
-//     // for (let btn of abcButtons) {
-//     //     btn.addEventListener("click", findLetterMatch);
-//     // }
-
-//     findLetterMatch();
-// }
-
-// Included in playGame function...
 function findLetterMatch(evt) {
     let buttonGuess = evt.target.innerHTML;
+    console.log(`Button guess: ${buttonGuess}`);
 
     if (!randomWord.match(buttonGuess)) {
         livesLeft--;
@@ -122,15 +113,11 @@ function resetGame() {
     gameStatus.innerHTML = "You have " + livesLeft + " lives left";
     showLives();
 
-    for (let button of abcButtons) {
-        button.removeAttribute("disabled");
-    }
-
-    // playGame();
     for (let btn of abcButtons) {
+        btn.removeAttribute("disabled");
+        btn.removeEventListener("click", findLetterMatch);
         btn.addEventListener("click", findLetterMatch);
     }
-    // findLetterMatch(evt);
 }
 
 function updateWordStage() {
