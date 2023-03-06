@@ -115,8 +115,6 @@ function resetGame() {
 
     for (let btn of abcButtons) {
         btn.removeAttribute("disabled");
-        btn.removeEventListener("click", findLetterMatch);
-        btn.addEventListener("click", findLetterMatch);
     }
 }
 
