@@ -122,7 +122,7 @@ function resetGame() {
 
 function updateWordStage() {
     wordDisplay = [];
-    setUpWordStage(wordDisplay);
+    setUpWordStage();
     wordAsString = wordDisplay.join(" ");
 
     console.log(`New wordAsString: ${wordAsString}`);
