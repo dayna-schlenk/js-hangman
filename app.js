@@ -37,6 +37,10 @@ function generateRandomWord() {
     randomWord = randomWordsCollection[randomIndex];
 }
 
+function showLives() {
+    lifeSpan.innerHTML = livesLeft;
+}
+
 function setUpWordStage() {
     for (let letter of randomWord) {
         wordDisplay.push("_");
@@ -80,10 +84,6 @@ function findLetterMatch(evt) {
     showLives();
     evt.target.setAttribute("disabled", true);
     determineResult();
-}
-
-function showLives() {
-    lifeSpan.innerHTML = livesLeft;
 }
 
 function determineResult() {
