@@ -14,8 +14,6 @@
 
 ![gameplay gif](gifs/gameplay.gif)
 
-<br>
-
 ## Post-MVP Enhancements to Include
 
 * Hints for mystery word
