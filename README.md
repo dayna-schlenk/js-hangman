@@ -12,7 +12,9 @@
 
 <br>
 
-![gameplay gif](gifs/gameplay.gif)
+<img src="gifs/gameplay.gif" width="50%">
+
+<br>
 
 ## Post-MVP Enhancements to Include
 
