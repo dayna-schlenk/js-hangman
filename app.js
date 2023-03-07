@@ -35,8 +35,6 @@ function generateRandomWord() {
 
     let randomIndex = Math.floor(Math.random() * randomWordsCollection.length);
     randomWord = randomWordsCollection[randomIndex];
-
-    console.log(`Random word: ${randomWord}`);
 }
 
 function setUpWordStage() {
@@ -66,7 +64,6 @@ function createAbcButtons() {
 
 function findLetterMatch(evt) {
     let buttonGuess = evt.target.innerHTML;
-    console.log(`Button guess: ${buttonGuess}`);
 
     if (!randomWord.match(buttonGuess)) {
         livesLeft--;
@@ -106,24 +103,26 @@ function disableAllButtons() {
 }
 
 function resetGame() {
-    generateRandomWord();
-    updateWordStage();
+    // generateRandomWord();
+    // updateWordStage();
 
-    livesLeft = 15;
-    gameStatus.innerHTML = "You have " + livesLeft + " lives left";
-    showLives();
+    // livesLeft = 15;
+    // gameStatus.innerHTML = "You have " + livesLeft + " lives left";
+    // showLives();
 
-    for (let btn of abcButtons) {
-        btn.removeAttribute("disabled");
-    }
+    // for (let btn of abcButtons) {
+    //     btn.removeAttribute("disabled");
+    // }
+    
+    window.location.reload();
 }
 
-function updateWordStage() {
-    wordDisplay = [];
-    setUpWordStage();
-    wordAsString = wordDisplay.join(" ");
+// function updateWordStage() {
+//     wordDisplay = [];
+//     setUpWordStage();
+//     wordAsString = wordDisplay.join(" ");
 
-    console.log(`New wordAsString: ${wordAsString}`);
+//     console.log(`New wordAsString: ${wordAsString}`);
 
-    paragraphElement.innerHTML = wordAsString;
-}
+//     paragraphElement.innerHTML = wordAsString;
+// }
