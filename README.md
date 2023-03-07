@@ -8,7 +8,7 @@
 * Bootstrap
 * Responsive design
 
-:link: Play game [here](https://www.google.com/)
+:link: Play game [here](https://dayna-schlenk.github.io/js-hangman/)
 
 <br>
 
